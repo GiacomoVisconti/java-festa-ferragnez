@@ -27,20 +27,34 @@ public class CheckGuest {
         //Creo una variabile booleana per il controllo della presenza dello username
         boolean isPresent = false;
 
-        //Per ogni elemento dell'array
-        for (int i = 0; i < guests.length; i++) {
 
-            String guest = guests[i].replaceAll("\\s+", "").toLowerCase();
-            // System.out.println(guest);
+        //? Logica con il FOR
+        // //Per ogni elemento dell'array
+        // for (int i = 0; i < guests.length; i++) {
+
+        //     String guest = guests[i].replaceAll("\\s+", "").toLowerCase();
+        //     // System.out.println(guest);
             
+        //     if (guest.equals(userName)) {
+        //         isPresent = true;
+        //     } 
+        // }
+
+        //? Logica con il WHILE
+        int i = 0;
+        while (!isPresent && i < guests.length) {
+            String guest = guests[i].replaceAll("\\s+", "").toLowerCase();
             if (guest.equals(userName)) {
                 isPresent = true;
             } 
+
+            i++;
         }
+        
 
         if (isPresent) {
             
-            System.out.println("Sei stato invitato");
+            System.out.println("Ciao " + guests[i-1] + ", sei stato invitat*!");
         } else {
                 System.out.println("Mi dispiace ma non sei invitato!");
 
